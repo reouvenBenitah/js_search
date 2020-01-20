@@ -9,10 +9,9 @@ displayCountries(countries);
 /*end: group 1*/
 
 
-
+/*start: group 2 - When the user started typing (search filter)   */
 countriesSearch.addEventListener('keyup', function (e) {
-  var userText = e.target.value.trim().toLowerCase();
-
+  var userText = e.target.value.trim().toLowerCase();//target - The specific event that the user uses (typing)
   if (userText.length > 0) {
 
     var result = countries.filter(function (country) {
@@ -25,7 +24,7 @@ countriesSearch.addEventListener('keyup', function (e) {
     displayCountries(countries);
   }
 });
-
+/*end: group 2 -  */
 
 
 
