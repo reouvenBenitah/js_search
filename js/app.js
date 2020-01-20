@@ -1,8 +1,15 @@
+/*start: group 1 - page load*/
+
 var countries = ['Argentina', 'Israel', 'America', 'Paris', 'Jordan', 'Spain'];
 var $cl = document.getElementById('countries-list');
-var countriesSearch = document.getElementById('countries-search');
+var countriesSearch = document.getElementById('countries-search'); //element user
 countries.sort()
 displayCountries(countries);
+
+/*end: group 1*/
+
+
+
 countriesSearch.addEventListener('keyup', function (e) {
   var userText = e.target.value.trim().toLowerCase();
 
@@ -11,6 +18,7 @@ countriesSearch.addEventListener('keyup', function (e) {
     var result = countries.filter(function (country) {
       return country.toLowerCase().indexOf(userText) === 0;
     });
+
     displayCountries(result);
 
   } else {
@@ -21,12 +29,12 @@ countriesSearch.addEventListener('keyup', function (e) {
 
 
 
-function displayCountries(array) {
+function displayCountries(array) {//var array = ['Argentina', 'Israel', 'America', 'Paris', 'Jordan', 'Spain'];
 
   var markUp = '';
-  array.filter(function (country) {
+  array.map(function (country) {
     markUp += '<li>' + country + '</li>';
-    
+
   });
 
   $cl.innerHTML = markUp;
