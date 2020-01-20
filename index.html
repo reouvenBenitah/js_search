@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- lessen 1 -->
+  <div class="from-group">
+
+    <input id="id_input1" size="2" type="text" value="">
+    <input id="id_input2" size="2" type="text" value="">
+    <br>
+
+    <input type="button" onclick="calcKeffel()" value="כפול">
+    <input type="button" onclick="calcHiluk()" value="חילוק">
+    <input type="button" onclick="calcMinus()" value="מינוס">
+    <input type="button" onclick="calcPlus()" value="פלוס">
+
+    <p id="id_p"></p>
+
+  </div>
+
+  <!-- lessen 2 -->
+  <div>
+    <input type="text" name="input" id="id_inputFa">
+    <input type="button" onclick="fibonacci()" value="Click Me">
+    <p id="fibonacci"></p>
+  </div>
+  <!-- lessen 3 -->
+
+  <div>
+    <input id="name" type="text">
+    <input type="button" onclick="validName()" value="Click Me">
+    <p id="id_val"></p>
+
+  </div>
+
+  <!-- lessen 4 -->
+  <div>
+
+    <input type="text" id="name">
+    <input type="text" id="result1">
+    <input type="button" onclick="result()" value="Result">
+    <p id="resultTest"></p>
+  </div>
+  <!-- lessen 1 -->
+  <script>
+    function calcKeffel() {
+      let result = Number(id_input1.value) * Number(id_input2.value);
+      id_p.innerHTML = result;
+      id_p.innerHTML = result;
+    }
+ 
+    function calcHiluk() {
+      let result = Number(id_input1.value) / Number(id_input2.value);
+      id_p.innerHTML = result;
+      id_p.innerHTML = result;
+    }
+
+    function calcMinus() {
+      let result = Number(id_input1.value) - Number(id_input2.value);
+      id_p.innerHTML = result;
+      id_p.innerHTML = result;
+    }
+
+    function calcPlus() {
+      let result = Number(id_input1.value) + Number(id_input2.value);
+      id_p.innerHTML = result;
+    }
+  </script>
+  <!-- lessen 2 -->
+  <script>
+    function fibonacci() {
+      var n1 = 0;
+      var n2 = 1;
+      var valFa = id_inputFa.value;
+      var result = 1;
+      for (let i = 1; i < valFa; i++) {
+        var tem = n1 + n2;
+        n1 = n2
+        n2 = tem;
+        result += n2 + " ";
+
+
+      }
+      document.getElementById("fibonacci").innerHTML = result;
+    }
+  </script>
+
+  <!-- lessen 3 -->
+
+  <script>
+    var arrName = ['reuven', 'sarah', 'shimaon', 'avi']
+
+    function validName() {
+      var nameInput = document.getElementById("name").value;
+      for (let i = 0; i < arrName.length; i++) {
+
+        if (arrName[i] === nameInput) {
+
+          id_val.innerHTML = `Welcome ${arrName[i]}`
+          return;
+        } else {
+          id_val.innerHTML = `No exist <strong>${nameInput}</strong>`
+        }
+
+      }
+
+    }
+  </script>
+
+  <!-- lessen 4 -->
+
+  <script>
+    function result() {
+      var name = document.getElementById("name").value;
+      if (result1.value < 70) {
+        resultTest.innerHTML = `<span> ${name} נכשלת במבחן`;
+        return;
+      }
+      if (result1.value > 70 && result.value <90) {
+        resultTest.innerHTML = `<span> ${name} עברת את המבחן `;
+        return;
+      }
+      if (result1.value > 90) {
+        resultTest.innerHTML = `<span> ${name} מצטיין`;
+        return;
+      }
+    }
+  </script>
+
+
+
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  </body>
